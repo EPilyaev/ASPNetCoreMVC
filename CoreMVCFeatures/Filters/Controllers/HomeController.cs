@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
+    [ProfileAsync]
     public class HomeController : Controller
     {
-        [HttpsOnly]
         public string Index() => "Hello from Index";
     }
 }
