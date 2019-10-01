@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
-    [ProfileAsync]
+    [ResultDetailsAsync]
     public class HomeController : Controller
     {
         public string Index() => "Hello from Index";
