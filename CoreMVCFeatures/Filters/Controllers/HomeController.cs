@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
+    [ProfileToResult]
     [ResultDetailsAsync]
     public class HomeController : Controller
     {
