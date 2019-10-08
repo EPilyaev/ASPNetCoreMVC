@@ -1,12 +1,12 @@
 ﻿using System;
 using Filters.Infrastructure;
+using Filters.Infrastructure.TypeFilters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
-    [ProfileToResult]
-    [ResultDetailsAsync]
-    [CustomExceptionFilter]
+    [TypeFilter(typeof(DiagnosticsFilter))]
+    [TypeFilter(typeof(TimeFilter))]
     public class HomeController : Controller
     {
         public string Index() => "Hello from Index";

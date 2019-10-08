@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Filters.Infrastructure
+namespace Filters.Infrastructure.TypeFilters
 {
     public interface IFilterDiagnostics
     {

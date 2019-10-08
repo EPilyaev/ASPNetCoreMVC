@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Filters.Infrastructure.TypeFilters;
 
 namespace Filters.Infrastructure
 {
