@@ -1,4 +1,5 @@
 ﻿using Filters.Infrastructure;
+using Filters.Infrastructure.ServiceFilters;
 using Filters.Infrastructure.TypeFilters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +11,8 @@ namespace Filters
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IFilterDiagnostics, DefaultFilterDiagnostics>();
+            services.AddSingleton<IFilterDiagnostics, DefaultFilterDiagnostics>();
+            services.AddSingleton<ServiceTimeFilter>();
             services.AddMvc();
         }
 

@@ -1,12 +1,13 @@
 ﻿using System;
 using Filters.Infrastructure;
+using Filters.Infrastructure.ServiceFilters;
 using Filters.Infrastructure.TypeFilters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
     [TypeFilter(typeof(DiagnosticsFilter))]
-    [TypeFilter(typeof(TimeFilter))]
+    [ServiceFilter(typeof(ServiceTimeFilter))]
     public class HomeController : Controller
     {
         public string Index() => "Hello from Index";
