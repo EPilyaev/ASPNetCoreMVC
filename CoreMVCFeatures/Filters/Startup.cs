@@ -11,9 +11,10 @@ namespace Filters
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IFilterDiagnostics, DefaultFilterDiagnostics>();
-            services.AddSingleton<ServiceTimeFilter>();
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(options => {
+                options.Filters.Add(new
+                MessageAttribute("This is the Globally-Scoped Filter"));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

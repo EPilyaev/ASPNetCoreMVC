@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Filters.Controllers
 {
-    [TypeFilter(typeof(DiagnosticsFilter))]
-    [ServiceFilter(typeof(ServiceTimeFilter))]
+    [Message("This is the Controller-Scoped Filter", Order = 10)]
     public class HomeController : Controller
     {
+        [Message("This is the First Action-Scoped Filter", Order = 1)]
+        [Message("This is the Second Action-Scoped Filter", Order = -1)]
         public string Index() => "Hello from Index";
 
         public string GenerateException(bool? gen)
