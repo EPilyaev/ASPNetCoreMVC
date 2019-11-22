@@ -11,10 +11,7 @@ namespace Filters
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(options => {
-                options.Filters.Add(new
-                MessageAttribute("This is the Globally-Scoped Filter"));
-            });
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
