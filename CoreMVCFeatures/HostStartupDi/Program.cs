@@ -13,14 +13,10 @@ namespace HostStartupDi
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            
             Host.CreateDefaultBuilder(args)
-                .ConfigureServices((hostContext, services) =>
+                .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    services.Configure<HostOptions>(option =>
-                    {
-                        option.ShutdownTimeout = System.TimeSpan.FromSeconds(20);
-                    });
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
